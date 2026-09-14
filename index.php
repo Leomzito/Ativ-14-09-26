@@ -10,7 +10,7 @@
     $nome = "Luiz";
     $idade = 30;
     $resposta= "";
-    if (idade >= 18){
+    if ($idade >= 18){
         $resposta="Você é maior de idade";
     }
     else{
