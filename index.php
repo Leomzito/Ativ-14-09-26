@@ -11,10 +11,10 @@
     $idade = 30;
     $resposta;
     if (idade >= 18){
-        $resposta=="Você é maior de idade"
+        $resposta="Você é maior de idade"
     }
     else{
-        $resposta=="Você é menor de idade"
+        $resposta="Você é menor de idade"
     }
     ?>
     <h1>nome: <?=$nome?> </h1>
