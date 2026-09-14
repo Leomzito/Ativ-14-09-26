@@ -19,7 +19,7 @@
     ?>
     <h1>nome: <?=$nome?> </h1>
     <p>idade: <?=$idade?> </p>
-    <h2><?=resposta?></h2>
+    <h2> <?=$resposta?> </h2>
     
 </body>
 </html>
