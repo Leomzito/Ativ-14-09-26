@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <form>
+        <input type "text" nome="$nome" placeholder="Digite seu nome">
+        <input type "number" idade="$idade" placeholder="Digite sua idade">
+        <input type "date" data="$data" placeholder="Digite a data de hoje">
+        <input type "button">
+    </form>
     <div class = "container">
         <?php
         $nome = "Luiz";
