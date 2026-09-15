@@ -32,8 +32,8 @@
         
 
         <?php  if($resposta != "") { ?>
-            <h2>O nome é: <?= nome ?> </h2>
-            <h2>A idade é: <?= idade ?> anos </h2>
+            <h2>O nome é: <?= $nome ?> </h2>
+            <h2>A idade é: <?= $resposta ?> anos </h2>
 
         <?php } ?>
         <h1>nome: <?=$nome?> </h1>
