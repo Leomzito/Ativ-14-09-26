@@ -26,7 +26,7 @@
     <form method="POST">
         <input type = "text" id="nome" name="nome" placeholder="Digite seu nome">
         <input type = "number" id="idade" name="idade" placeholder="Digite sua idade">
-        <button type "button" value="Enviar">
+        <button type="submit">Verificar</button>
     </form>
     <div class = "container">
         
