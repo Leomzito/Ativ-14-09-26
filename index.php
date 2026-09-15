@@ -24,21 +24,19 @@
 </head>
 <body>
     <form method="POST">
-        <input type "text" id="nome" name="nome" placeholder="Digite seu nome">
-        <input type "number" id="idade" name="idade" placeholder="Digite sua idade">
-        <button type "button" value="Enviar">
+        <input type = "text" id="nome" name="nome" placeholder="Digite seu nome">
+        <input type = "number" id="idade" name="idade" placeholder="Digite sua idade">
+        <button type = "button"> Enviar </button>
     </form>
     <div class = "container">
         
 
         <?php  if($resposta != "") { ?>
             <h2>O nome é: <?= $nome ?> </h2>
-            <h2>A idade é: <?= $resposta ?> anos </h2>
+            <h2>A idade é: <?= $idade ?> anos </h2>
+            <h2> <?= $resposta ?> </h2>
 
         <?php } ?>
-        <h1>nome: <?=$nome?> </h1>
-        <p>idade: <?=$idade?> </p>
-        <h2> <?=$resposta?> </h2>
     </div>
 </body>
 </html>
