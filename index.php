@@ -7,24 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <input type "text" nome="$nome" placeholder="Digite seu nome">
-        <input type "number" idade="$idade" placeholder="Digite sua idade">
-        <input type "date" data="$data" placeholder="Digite a data de hoje">
-        <input type "button">
+    <form method="POST">
+        <input type "text" id="nome" name="nome" placeholder="Digite seu nome">
+        <input type "number" id="idade" name="idade" placeholder="Digite sua idade">
+        <input type "button" value="Enviar">
     </form>
     <div class = "container">
         <?php
-        $nome = "Luiz";
-        $idade = 30;
+        $nome = "";
+        $idade = 0;
         $resposta= "";
-        if ($idade >= 18){
+        if ($_SERVER ["REQUEST_METHOD"]=="POST"){
+        $nome = $_POST["nome"];
+        $idade = $_POST["idade"];
+         if ($idade >= 18){
             $resposta="Você é maior de idade";
         }
         else{
-            $resposta="Você é menor de idade";
+            $resposta="Você é menor de idade";    
+        }
         }
         ?>
+        
         <h1>nome: <?=$nome?> </h1>
         <p>idade: <?=$idade?> </p>
         <h2> <?=$resposta?> </h2>
