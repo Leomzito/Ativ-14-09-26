@@ -31,7 +31,8 @@
     <div class = "container">
         
 
-        <?php  if($resposta != "") {
+        <?php  if($resposta != "") { ?>
+        
             <?php } ?>
         <h1>nome: <?=$nome?> </h1>
         <p>idade: <?=$idade?> </p>
