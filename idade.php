@@ -23,6 +23,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="index.php">Página inicial</a>
     <form method="POST">
         <input type = "text" id="nome" name="nome" placeholder="Digite seu nome">
         <input type = "number" id="idade" name="idade" placeholder="Digite sua idade">
