@@ -5,11 +5,6 @@
     if ($_SERVER ["REQUEST_METHOD"]=="POST"){
         $nome = $_POST["nome"];
         $idade = $_POST["idade"];
-        $nota1 = $_POST["nota1"];
-        $nota2 = $_POST["nota2"];
-        $nota3 = $_POST["nota3"];
-        $nota4 = $_POST["nota4"];
-        $nota5 = $_POST["nota5"];
          if ($idade >= 18){
             $resposta="Você é maior de idade";
         }
@@ -29,13 +24,8 @@
 </head>
 <body>
     <form method="POST">
-        <input type = "text" id="nome" name="nome" placeholder="Digite o nome">
-        <input type = "number" id="idade" name="idade" placeholder="Digite a idade">
-        <input type = "number" id="nota1" name="nota1" placeholder="Digite a nota 1">
-        <input type = "number" id="nota2" name="nota2" placeholder="Digite a nota 2">
-        <input type = "number" id="nota1" name="nota1" placeholder="Digite a nota 1">
-        <input type = "number" id="nota1" name="idade" placeholder="Digite a idade">
-        <input type = "number" id="nota1" name="idade" placeholder="Digite a idade">
+        <input type = "text" id="nome" name="nome" placeholder="Digite seu nome">
+        <input type = "number" id="idade" name="idade" placeholder="Digite sua idade">
         <button type="submit">Verificar</button>
     </form>
     <div class = "container">
