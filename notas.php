@@ -18,7 +18,7 @@
             $resposta="RECUPERAÇÃO";    
         }
         else{
-            $resposta="REPROVADO"
+            $resposta="REPROVADO";
         }
     }
 ?>
