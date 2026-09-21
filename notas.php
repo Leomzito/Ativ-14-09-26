@@ -14,8 +14,11 @@
          if ($media >= 7){
             $resposta="APROVADO";
         }
+        elseif ($media < 7 && $media >= 5){
+            $resposta="RECUPERAÇÃO";    
+        }
         else{
-            $resposta="REPROVADO";    
+            $resposta="REPROVADO"
         }
     }
 ?>
