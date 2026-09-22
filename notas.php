@@ -3,6 +3,7 @@
     $idade = 0;
     $resposta= "";
     $falta="";
+    $frequencia=0;
     if ($_SERVER ["REQUEST_METHOD"]=="POST"){
         $nome = $_POST["nome"] ?? 0;
         $idade = $_POST["idade"] ?? 0;
@@ -24,6 +25,9 @@
         {
             echo "Os valores das notas devem ser de zero a dez!";
         }
+        elseif ($frequencia > 100 || $frequencia < 0){
+            echo "Os valores da frequência devem ser de zero a cem!";
+        }
 
         $media = (($nota1 * 2) + ($nota2 * 3) + ($nota3 * 1) + ($nota4 * 1) + ($nota5 * 3)) / 10;
 
@@ -41,6 +45,30 @@
             $resposta="REPROVADO";
             $falta=(7-$media);
         }
+
+        $frequencia = $_POST["frequencia"] ?? 0;
+        if ($frequencia < 0 || $frequencia > 100) {
+        echo "A frequência deve estar entre 0% e 100%.";
+        }
+
+        if ($media >= 7 && $frequencia >= 75){
+            if ($media == 10) {
+                $resposta = "APROVADO COM EXCELÊNCIA";
+            } else {
+                $resposta = "APROVADO";
+            }
+
+            } elseif ($media >= 7 && $frequencia < 75) {
+                $resposta = "REPROVADO POR FREQUÊNCIA";
+
+            } elseif ($media >= 5) {
+                $resposta = "RECUPERAÇÃO";
+                $falta = 7 - $media;
+
+            } else {
+                $resposta = "REPROVADO";
+                $falta = 7 - $media;
+            }
     }
 ?>
 
@@ -59,11 +87,12 @@
     <form method="POST">
         <input type = "text" id="nome" name="nome" placeholder="Digite o nome">
         <input type = "number" id="idade" name="idade" placeholder="Digite a idade">
-        <input type = "number" id="nota1" name="nota1" placeholder="Digite a nota 1">
-        <input type = "number" id="nota2" name="nota2" placeholder="Digite a nota 2">
-        <input type = "number" id="nota3" name="nota3" placeholder="Digite a nota 3">
-        <input type = "number" id="nota4" name="nota4" placeholder="Digite a nota 4">
-        <input type = "number" id="nota5" name="nota5" placeholder="Digite a nota 5">
+        <input type = "number" id="nota1" name="nota1" min="0" max="10" placeholder="Digite a nota 1">
+        <input type = "number" id="nota2" name="nota2" min="0" max="10" placeholder="Digite a nota 2">
+        <input type = "number" id="nota3" name="nota3" min="0" max="10" placeholder="Digite a nota 3">
+        <input type = "number" id="nota4" name="nota4" min="0" max="10" placeholder="Digite a nota 4">
+        <input type = "number" id="nota5" name="nota5" min="0" max="10" placeholder="Digite a nota 5">
+        <input type = "number" id="frequencia" name="frequencia" placeholder="Digite a frequência do aluno">
         <button type="submit">Verificar</button>
     </form>
     <div class = "container">
