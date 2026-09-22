@@ -32,7 +32,9 @@
     <title>Verificador de Notas</title>
 </head>
 <body>
+    <nav>
     <a href="index.php">Página inicial</a>
+    </nav>
     <form method="GET">
         <input type = "text" id="nome" name="nome" placeholder="Digite o nome">
         <input type = "number" id="idade" name="idade" placeholder="Digite a idade">

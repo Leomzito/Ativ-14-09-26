@@ -23,7 +23,9 @@
     <title>Verificador de Idade</title>
 </head>
 <body>
+    <nav>
     <a href="index.php">Página inicial</a>
+    </nav>
     <form method="POST">
         <input type = "text" id="nome" name="nome" placeholder="Digite seu nome">
         <input type = "number" id="idade" name="idade" placeholder="Digite sua idade">
