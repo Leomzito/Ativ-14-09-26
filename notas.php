@@ -2,6 +2,7 @@
     $nome = "";
     $idade = 0;
     $resposta= "";
+    $falta="";
     if ($_SERVER ["REQUEST_METHOD"]=="POST"){
         $nome = $_POST["nome"] ?? 0;
         $idade = $_POST["idade"] ?? 0;
@@ -21,7 +22,7 @@
             $nota4 < 0 || $nota4 > 10 ||
             $nota5 < 0 || $nota5 > 10) 
         {
-            echo "As notas devem ser maiores que zero e menor que dez!";
+            echo "Os valores das notas devem ser de zero a dez!";
         }
 
         $media = (($nota1 * 2) + ($nota2 * 3) + ($nota3 * 1) + ($nota4 * 1) + ($nota5 * 3)) / 10;
@@ -34,9 +35,11 @@
         }
         elseif ($media < 7 && $media >= 5){
             $resposta="RECUPERAÇÃO";    
+            $falta=(7-$media);
         }
         else{
             $resposta="REPROVADO";
+            $falta=(7-$media);
         }
     }
 ?>
@@ -71,6 +74,7 @@
             <h2>A idade é: <?= $idade ?> anos </h2>
             <h2>A média é: <?= $media ?> </h2>
             <h2> <?= $resposta ?> </h2>
+            <h2>Falta(m) <?= $falta ?> ponto(s) para atingir a média</h2>
 
         <?php } ?>
     </div>
