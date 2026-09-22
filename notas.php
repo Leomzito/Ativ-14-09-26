@@ -25,6 +25,8 @@
         {
             echo "Os valores das notas devem ser de zero a dez!";
         }
+
+        $frequencia = $_POST["frequencia"] ?? 0;
         elseif ($frequencia > 100 || $frequencia < 0){
             echo "Os valores da frequência devem ser de zero a cem!";
         }
@@ -46,7 +48,6 @@
             $falta=(7-$media);
         }
 
-        $frequencia = $_POST["frequencia"] ?? 0;
         if ($frequencia < 0 || $frequencia > 100) {
         echo "A frequência deve estar entre 0% e 100%.";
         }
@@ -101,6 +102,7 @@
         <?php  if($resposta != "") { ?>
             <h2>O nome é: <?= $nome ?> </h2>
             <h2>A idade é: <?= $idade ?> anos </h2>
+            <h2>A frequência é: <?= $frequencia ?>% </h2>
             <h2>A média é: <?= $media ?> </h2>
             <?php
                 $classeSituacao = "reprovado";
