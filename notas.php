@@ -3,15 +3,33 @@
     $idade = 0;
     $resposta= "";
     if ($_SERVER ["REQUEST_METHOD"]=="POST"){
-        $nome = $_POST["nome"];
-        $idade = $_POST["idade"];
-        $nota1 = $_POST["nota1"];
-        $nota2 = $_POST["nota2"];
-        $nota3 = $_POST["nota3"];
-        $nota4 = $_POST["nota4"];
-        $nota5 = $_POST["nota5"];
+        $nome = $_POST["nome"] ?? 0;
+        $idade = $_POST["idade"] ?? 0;
+        $nota1 = $_POST["nota1"] ?? 0;
+        $nota2 = $_POST["nota2"] ?? 0;
+        $nota3 = $_POST["nota3"] ?? 0;
+        $nota4 = $_POST["nota4"] ?? 0;
+        $nota5 = $_POST["nota5"] ?? 0;
+
+        if ($idade <= 0){
+            echo "A idade deve ser maior que zero!";
+        }
+
+        elseif ($nota1 < 0 || $nota1 > 10 ||
+            $nota2 < 0 || $nota2 > 10 ||
+            $nota3 < 0 || $nota3 > 10 ||
+            $nota4 < 0 || $nota4 > 10 ||
+            $nota5 < 0 || $nota5 > 10) 
+        {
+            echo "As notas devem ser maiores que zero e menor que dez!";
+        }
+
         $media = (($nota1 * 2) + ($nota2 * 3) + ($nota3 * 1) + ($nota4 * 1) + ($nota5 * 3)) / 10;
-         if ($media >= 7){
+
+        if ($media == 10){
+            $resposta="APROVADO COM EXCELÊNCIA";
+        }
+        elseif ($media < 10 && $media >= 7){
             $resposta="APROVADO";
         }
         elseif ($media < 7 && $media >= 5){
