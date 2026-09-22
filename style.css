@@ -1,22 +1,24 @@
 body {
     margin: 0;
     font-size: medium;
-    background-color: rgb(128, 128, 128);
+    background-color: #eeeeee;
+    font-family: Arial, sans-serif;
 }
 
 nav {
     padding: 15px;
-    background-color: white;
+    background-color: #333333;
 }
 
 nav a {
     margin-right: 15px;
+    color: white;
+    text-decoration: none;
 }
 
 form, .container {
     width: 300px;
     margin: 30px auto;
-    text-align: justify;
 }
 
 input, button {
@@ -26,8 +28,41 @@ input, button {
     box-sizing: border-box;
 }
 
+button {
+    border: none;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+}
+
 .container {
     background-color: white;
     padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #aaaaaa;
 }
-;
+
+.container h2 {
+    font-size: 18px;
+}
+
+.situacao {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.aprovado {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+}
+
+.recuperacao {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.reprovado {
+    background-color: #f8d7da;
+    color: #842029;
+}

@@ -73,7 +73,16 @@
             <h2>O nome é: <?= $nome ?> </h2>
             <h2>A idade é: <?= $idade ?> anos </h2>
             <h2>A média é: <?= $media ?> </h2>
-            <h2> <?= $resposta ?> </h2>
+            <?php
+                $classeSituacao = "reprovado";
+
+                if ($resposta == "APROVADO" || $resposta == "APROVADO COM EXCELÊNCIA") {
+                    $classeSituacao = "aprovado";
+                } elseif ($resposta == "RECUPERAÇÃO") {
+                    $classeSituacao = "recuperacao";
+                }
+            ?>
+            <h2 class="situacao <?= $classeSituacao ?>"><?= $resposta ?></h2>
             <h2>Falta(m) <?= $falta ?> ponto(s) para atingir a média</h2>
 
         <?php } ?>
