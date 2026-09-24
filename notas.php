@@ -27,7 +27,7 @@
         }
 
         $frequencia = $_POST["frequencia"] ?? 0;
-        elseif ($frequencia > 100 || $frequencia < 0){
+        if ($frequencia > 100 || $frequencia < 0){
             echo "Os valores da frequência devem ser de zero a cem!";
         }
 
@@ -93,7 +93,7 @@
         <input type = "number" id="nota3" name="nota3" min="0" max="10" placeholder="Digite a nota 3">
         <input type = "number" id="nota4" name="nota4" min="0" max="10" placeholder="Digite a nota 4">
         <input type = "number" id="nota5" name="nota5" min="0" max="10" placeholder="Digite a nota 5">
-        <input type = "number" id="frequencia" name="frequencia" placeholder="Digite a frequência do aluno">
+        <input type="number" id="frequencia" name="frequencia" min="0" max="100" step="0.1" required placeholder="Digite a frequência do aluno (0% a 100%)">
         <button type="submit">Verificar</button>
     </form>
     <div class = "container">
@@ -114,8 +114,10 @@
                 }
             ?>
             <h2 class="situacao <?= $classeSituacao ?>"><?= $resposta ?></h2>
-            <h2>Falta(m) <?= $falta ?> ponto(s) para atingir a média</h2>
+            <?php if ($falta !== "") { ?>
+            <h2>Faltaram <?= number_format($falta, 1, ',', '') ?> ponto(s) para atingir a média 7</h2>
 
+            <?php } ?>
         <?php } ?>
     </div>
 </body>
