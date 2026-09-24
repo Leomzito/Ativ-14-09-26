@@ -52,15 +52,15 @@
         echo "A frequência deve estar entre 0% e 100%.";
         }
 
-        if ($media >= 7 && $frequencia >= 75){
+        if ($frequencia < 75) {
+                $resposta = "REPROVADO POR FREQUÊNCIA";
+
+            } elseif ($media >= 7) {
             if ($media == 10) {
                 $resposta = "APROVADO COM EXCELÊNCIA";
             } else {
                 $resposta = "APROVADO";
             }
-
-            } elseif ($media >= 7 && $frequencia < 75) {
-                $resposta = "REPROVADO POR FREQUÊNCIA";
 
             } elseif ($media >= 5) {
                 $resposta = "RECUPERAÇÃO";
