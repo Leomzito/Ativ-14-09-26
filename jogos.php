@@ -31,6 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="jogos.css">
 </head>
 <body>
+    <nav>
+    <a href="index.php">Página inicial</a>
+    </nav>
     <h1>Cadastrar jogo</h1>
 
     <form method="POST">
