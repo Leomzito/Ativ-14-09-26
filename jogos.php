@@ -5,7 +5,8 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     genero VARCHAR(50),
-    nota INT
+    nota INT,
+    ano_lancamento INT
 )");
 
 $mensagem = "";
@@ -14,9 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST["nome"];
     $genero = $_POST["genero"];
     $nota = $_POST["nota"];
+    $ano_lancamento = $_POST["ano_lancamento"];
 
-    $sql = "INSERT INTO jogos (nome, genero, nota)
-            VALUES ('$nome', '$genero', $nota)";
+    $sql = "INSERT INTO jogos (nome, genero, nota, ano_lancamento)
+            VALUES ('$nome', '$genero', $nota, $ano_lancamento)";
     $pdo->exec($sql);
 
     $mensagem = "Jogo cadastrado com sucesso!";
@@ -46,6 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label for="nota">Nota</label>
         <input type="number" id="nota" name="nota" step="1" required>
 
+        <label for="ano_lancamento">Ano de lançamento</label>
+        <input type="number" id="ano_lancamento" name="ano_lancamento" step="1" required>
+
         <button type="submit">Cadastrar</button>
     </form>
 
@@ -56,5 +61,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ?>
 </body>
 </html>
-
-
