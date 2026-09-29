@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de jogos</title>
+    <title>Cadastro de jogos</title>`r`n    <link rel="stylesheet" href="jogos.css">
 </head>
 <body>
     <h1>Cadastrar jogo</h1>
@@ -52,3 +52,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ?>
 </body>
 </html>
+
