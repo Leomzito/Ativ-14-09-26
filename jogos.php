@@ -70,26 +70,28 @@ $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     ?>
 
-    <h2>Jogos cadastrados</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Gênero</th>
-            <th>Ano de lançamento</th>
-            <th>Nota</th>
-        </tr>
-        
-        <!-- foreach() -> Para cada item na lista , faça algo com X variavel -->
-        <?php foreach($jogos as $jogo) { ?>
+    <div class = "tabela_jogos">
+        <h2>Jogos cadastrados</h2>
+        <table>
             <tr>
-                <td><?= $jogo["id"] ?></td>
-                <td><?= $jogo["nome"] ?></td>
-                <td><?= $jogo["genero"] ?></td>
-                <td><?= $jogo["ano_lancamento"] ?></td>
-                <td><?= $jogo["nota"] ?></td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Gênero</th>
+                <th>Ano de lançamento</th>
+                <th>Nota</th>
             </tr>
-        <?php } ?>
-    </table>
+            
+            <!-- foreach() -> Para cada item na lista , faça algo com X variavel -->
+            <?php foreach($jogos as $jogo) { ?>
+                <tr>
+                    <td><?= $jogo["id"] ?></td>
+                    <td><?= $jogo["nome"] ?></td>
+                    <td><?= $jogo["genero"] ?></td>
+                    <td><?= $jogo["ano_lancamento"] ?></td>
+                    <td><?= $jogo["nota"] ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
 </body>
 </html>
