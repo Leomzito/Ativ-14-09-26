@@ -31,7 +31,7 @@ $buscar = "SELECT * FROM jogos";
 // query() = executa algo quando você QUER retorno de dados
 $stmt = $pdo->query($buscar);
 
-$jogos = stmt->fetchAll(PDO::FETCH_ASSOC);
+$jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
