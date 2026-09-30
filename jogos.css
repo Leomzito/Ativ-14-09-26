@@ -71,6 +71,7 @@ nav a {
 
 .tabela_jogos {
     border-radius: 8px;
+    border-color: #333333;
     box-shadow: 0 2px 6px #aaaaaa;
     background-color: rgb(206, 206, 206);
 }
