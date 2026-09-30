@@ -1,0 +1,44 @@
+﻿body {
+    margin: 0;
+    font-size: medium;
+    background-color: #eeeeee;
+    font-family: Arial, sans-serif;
+}
+
+.caixa-login {
+    width: 300px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#mensagem {
+    margin-top: 15px;
+}
+
+nav {
+    padding: 15px;
+    background-color: #333333;
+}
+
+nav a {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+}
