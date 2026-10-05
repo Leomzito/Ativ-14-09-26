@@ -20,16 +20,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/../style.css">
-    <title>Página Inicial</title>
+    <title>Meu Portfólio - Página Inicial</title>
 </head>
 <body>
-    <nav>
+    <header>        
+        <nav class="navbar">
+
+            <h2 class="logo">Meu Portfólio</h2>
+
+            <ul class="menu">
+
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <section id="inicio" class="inicio">
+            <div class="inicio-conteudo">
+
+                <p class="saudaçao">Olá, eu sou</p>
+                <h1>Luiz Eduardo Oliveira Muraski</h1>
+                <h2>Desenvolvedor em formação<'/h2>
+                <p>
+                    Estudante de Desenvolvimento de Sistemas
+                    Formado em Administração
+                </p>
+                <p>
+                    Meu objetivo é continuar evoluindo como
+                    desenvolvedor, buscando sempre aprender 
+                    novas tecnologias e aprimorar minhas 
+                    habilidades.
+                </p>
+            </div>
+        </section>
+        <section id="habilidades" class="secao secao-destaque">
+            <h2 class="titulo-secao">Minhas habilidades</h2>
+            <p class="subtitulo-secao">
+                Algumas tecnologias que estou estudadando:
+            </p>
+            <div class="lista-habilidades" >
+                <div class="habilidade">
+                    HTML
+                </div>
+                <div class="habilidade">
+                    CSS
+                </div>
+                <div class="habilidade">
+                    PHP
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="secao">
+            <h2 class="titulo-secao">Meus projetos</h2>
+            <p class="subtitulo-secao">
+                Alguns projetos desenvolvidos durante as aulas.
+            </p>
+            <div class="projetos-container">
+
+                <!--PROJETO 1 -->
+
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        01
+                    </div>
+                    <h3>Verificação de idade</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>                        
+                    </div>
+                    <a href="projetos/idade.php" class="link-projeto">
+                        Ver projeto ->
+                    </a>
+                </div>
+
+                <!--PROJETO 2 -->
+
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        02
+                    </div>
+                    <h3>Verificação de notas</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                        Simulação de notas e média utilizando método POST.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="projetos/notas.php" class="link-projeto">
+                        Ver projeto ->
+                    </a>
+                </div>
+
+                <!--PROJETO 3 -->
+
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        03
+                    </div>
+                    <h3>Verificação de notas - método GET</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                        Simulação de notas e média utilizando método GET.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="projetos/notas_get.php" class="link-projeto">
+                        Ver projeto ->
+                    </a>
+                </div>
+
+                <!--PROJETO 4 -->
+
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        04
+                    </div>
+                    <h3>Página de login</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                        Simulação de login, utilizando usuário e senha.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="projetos/login.php" class="link-projeto">
+                        Ver projeto ->
+                    </a>
+                </div>
+
+                <!--PROJETO 5 -->
+
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        05
+                    </div>
+                    <h3>Cadastro de jogos</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                        Simulação de cadastro de jogos,
+                        utilizando banco de dados MySQL, 
+                        e bloqueio por login.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="projetos/jogos.php" class="link-projeto">
+                        Ver projeto ->
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+
+        <section id="contato" class="secao secao-destaque">
+            <h2 class="titulo-secao">Contato</h2>
+            <p class="subtitulo-secao">
+                Entre em contato:
+            </p>
+            <div class="contato-container">
+                <div class="contato-item">
+                    <h3>Email</h3>
+                    <p>leom3108@outlook.com</p>
+                </div>
+                <div class="contato-item">
+                    <h3>GitHub</h3>
+                    <p>https://github.com/Leomzito</p>
+                </div>
+                <div class="contato-item">
+                    <h3>LinkedIn</h3>
+                    <p>https://www.linkedin.com/in/luiz-eduardo-oliveira-muraski-151227184/</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--RODAPÉ -->
+
+    <footer>
+        <p>
+            Desenvolvido por <a href= "https://luiz315.devlook.xyz/">Leomzito</a> - 2026
+        </p>
+    </footer>
+
+    <!-- <nav>
     <a href="projetos/idade.php">Verificador de idade</a>
     <a href="projetos/notas.php">Verificador de notas</a>
     <a href="projetos/notas_get.php">Verificador de notas - metodo get</a>
     <a href="projetos/login.php">Página de login</a>
     <a href="projetos/jogos.php">Cadastro de jogos</a>
-    </nav>
+    </nav> -->
 </body>
 </html>
 
