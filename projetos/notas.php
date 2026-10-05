@@ -86,7 +86,7 @@ require __DIR__ . "/../conexao.php";
 </head>
 <body>
     <nav>
-    <a href="index.php">Página inicial</a>
+    <a href="projetos/index.php">Página inicial</a>
     </nav>
     <form method="POST">
         <input type = "text" id="nome" name="nome" placeholder="Digite o nome">

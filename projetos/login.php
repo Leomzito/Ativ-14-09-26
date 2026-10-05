@@ -5,7 +5,7 @@ require __DIR__ . "/../conexao.php";
 session_start();
 
 $usuarioCorreto = "leomzito";
-$senhaCorreta = "0975";
+$senhaCorreta = "0795";
 $mensagem = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="/../login.css">
 </head>
 <body>
-    <nav><a href="index.php">Página inicial</a></nav>
+    <nav><a href="projetos/index.php">Página inicial</a></nav>
     <div class="caixa-login">
         <h1>Login</h1>
         <form method="POST" action="login.php">

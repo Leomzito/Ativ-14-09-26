@@ -51,7 +51,7 @@ $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <nav>
-    <a href="index.php">Página inicial</a>
+    <a href="projetos/index.php">Página inicial</a>
     </nav>
     <h1>Cadastrar jogo</h1>
 
