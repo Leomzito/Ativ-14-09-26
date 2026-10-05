@@ -24,11 +24,11 @@
 </head>
 <body>
     <nav>
-    <a href="idade.php">Verificador de idade</a>
-    <a href="notas.php">Verificador de notas</a>
-    <a href="notas_get.php">Verificador de notas - metodo get</a>
-    <a href="login.php">Página de login</a>
-    <a href="jogos.php">Cadastro de jogos</a>
+    <a href="projeto/idade.php">Verificador de idade</a>
+    <a href="projeto/notas.php">Verificador de notas</a>
+    <a href="projeto/notas_get.php">Verificador de notas - metodo get</a>
+    <a href="projeto/login.php">Página de login</a>
+    <a href="projeto/jogos.php">Cadastro de jogos</a>
     </nav>
 </body>
 </html>

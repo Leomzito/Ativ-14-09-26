@@ -7,7 +7,6 @@ if (empty($_SESSION["autenticado"])) {
     header("Location: login.php");
     exit;
 }
-require "conexao.php";
 
 $pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
     id INT PRIMARY KEY AUTO_INCREMENT,
