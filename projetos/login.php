@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="/../login.css">
 </head>
 <body>
-    <nav><a href="projetos/index.php">Página inicial</a></nav>
+    <nav><a href="/../index.php">Página inicial</a></nav>
     <div class="caixa-login">
         <h1>Login</h1>
         <form method="POST" action="login.php">
