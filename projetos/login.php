@@ -1,4 +1,7 @@
 ﻿<?php
+
+require __DIR__ . "/../conexao.php";
+
 session_start();
 
 $usuarioCorreto = "leomzito";
