@@ -11,14 +11,14 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #4c4c4c;
+    background-color: #7b7b7b;
     color: #222222;
     line-height: 1.6;
 }
 
 /*MENU*/
 header {
-    background-color: #cd2323;
+    background-color: #b20c0c;
     position: sticky;
     top: 0;
     z-index: 100;
