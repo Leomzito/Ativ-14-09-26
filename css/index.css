@@ -90,7 +90,7 @@ header {
     padding: 12px 25px;
 
     background-color: #2563eb;
-    color: white;
+    color: rgb(207, 226, 255);
 
     text-decoration: none;
 
@@ -138,7 +138,7 @@ header {
     min-width: 200px;
     border-radius: 50%;
     background-color: #ae0000;
-    color: rgb(154, 154, 154);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
