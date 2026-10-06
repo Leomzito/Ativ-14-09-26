@@ -45,7 +45,7 @@
 
                 <p class="saudaçao">Olá, eu sou</p>
                 <h1>Luiz Eduardo Oliveira Muraski</h1>
-                <h2>Desenvolvedor em formação<'/h2>
+                <h2>Desenvolvedor em formação</h2>
                 <p>
                     Estudante de Desenvolvimento de Sistemas
                     Formado em Administração
