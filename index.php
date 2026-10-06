@@ -48,7 +48,9 @@
                 <h2>Desenvolvedor em formação</h2>
                 <p>
                     Estudante de Desenvolvimento de Sistemas
-                    Formado em Administração
+                </p>
+                <p>
+                    Graduado em Administração
                 </p>
                 <p>
                     Meu objetivo é continuar evoluindo como
