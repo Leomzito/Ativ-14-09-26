@@ -43,11 +43,11 @@
 <body>
     <form method="post">
         <label>Nome:</label>
-        <input type="text" id="nome" name="nome" maxlength="100" required>
+        <input type="text" name="nome">
         <label>Idade:</label>
-        <input type="number" id="idade" name="idade" step="1" required>
+        <input type="number" name="idade">
         <label>Curso:</label>
-        <input type="text" id="curso" name="curso" maxlength="50" required>
+        <input type="text" name="curso">
 
         <button type="submit">Cadastrar</button>
     </form>
