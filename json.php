@@ -1,10 +1,11 @@
 <?php
     // 1. DECLARAR O CAMINHO DO ARQUIVO JSON
-    $caminho = __DIR__ . "/dados.json";
+    $caminho = __DIR__ . "dados.json";
 
     // 2. ABRIR/LER O ARQUIVO JSON
     $json = file_get_contents($caminho);
 
+    echo "DADOS REGISTRADOS EM dados.json";
     // 3. TRANSFORMAR JSON EM ARRAY PHP
     $alunos = json_decode($json, true);
 
