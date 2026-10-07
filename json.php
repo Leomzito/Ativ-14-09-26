@@ -9,25 +9,60 @@
     $alunos = json_decode($json, true);
 
     if($_SERVER["REQUEST_METHOD"]=="POST") {
-    // 4. CRIAR UM ALUNO
-    $novoAluno = [
-        "nome" => $_POST["nome"],
-        "idade" => $_POST["idade"],
-        "curso" => $_POST["curso"]
-    ];
 
-    // 5. ADICIONAR O ALUNO NO ARRAY
-    $alunos[] = $novoAluno;
+        $acao = $_POST["acao"];
 
-    // 6. TRANSFORMAR ARRAY PHP EM JSON
-    $jsonAtualizado = json_encode($alunos, 
-    JSON_PRETTY_PRINT | 
-    JSON_UNESCAPED_UNICODE);
+        if ($acao === "cadastrar") {
+            // 4. CRIAR UM ALUNO
+            $novoAluno = [
+                "nome" => $_POST["nome"],
+                "idade" => $_POST["idade"],
+                "curso" => $_POST["curso"]
+            ];
 
-    // 7. SALVAR NO ARQUIVO JSON
-    file_put_contents($caminho, $jsonAtualizado);
+            // 5. ADICIONAR O ALUNO NO ARRAY
+            $alunos[] = $novoAluno;
 
-    echo "DADOS REGISTRADOS EM dados.json";
+            // 6. TRANSFORMAR ARRAY PHP EM JSON
+            $jsonAtualizado = json_encode($alunos, 
+            JSON_PRETTY_PRINT | 
+            JSON_UNESCAPED_UNICODE);
+
+            // 7. SALVAR NO ARQUIVO JSON
+            file_put_contents($caminho, $jsonAtualizado);
+
+            echo "DADOS REGISTRADOS EM dados.json";
+        }
+
+         if ($acao === "atualizar") {
+            // PEGAR OS DADOS DO FORMULÁRIO
+            $nome = $_POST["nome"];
+            $novaIdade = $_POST["idade"];
+            $novoCurso = $_POST["curso"];
+
+            //PERCORRER TODOS OS ALUNOS
+            foreach($alunos as $posicao => $aluno) {
+                if($aluno["nome"] == $nome) {
+                    $alunos[$posicao]["idade"] = $novaIdade;
+                    $alunos[$posicao]["curso"] = $novoCurso;
+                }
+            }
+
+            // TRANSFORMAR ARRAY EM JSON
+            $jsonAtualizado = json_encode (
+                $alunos,
+                JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+            );
+
+            // SALVAR NO ARQUIVO
+            file_put_contents($caminho, $jsonAtualizado);
+            //
+            //
+            //
+            //
+
+         }
+
     }
 
 
@@ -41,15 +76,16 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>EFETUAR CADASTRO</h2>
     <form method="post">
         <label>Nome:</label>
-        <input type="text" id="nome" name="nome" maxlength="100" required>
+        <input type="text" name="nome" maxlength="100" required>
         <label>Idade:</label>
-        <input type="number" id="idade" name="idade" maxlenght="50" required>
+        <input type="number" name="idade" maxlenght="50" required>
         <label>Curso:</label>
-        <input type="text" id="curso" name="curso" maxlength="100" required>
+        <input type="text" name="curso" maxlength="100" required>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit" name="acao" value="cadastrar">Cadastrar</button>
     </form>
 
     <h2>ALUNOS CADASTRADOS</h2>
@@ -58,6 +94,18 @@
         <p>Idade: <?= $aluno["idade"] ?></p>
         <p>Curso: <?= $aluno["curso"] ?></p>
     <?php } ?>
+
+    <h2>ATUALIZAR CADASTRO</h2>
+    <form method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome" maxlength="100" required>
+        <label>Idade:</label>
+        <input type="number" name="idade" maxlenght="50" required>
+        <label>Curso:</label>
+        <input type="text" name="curso" maxlength="100" required>
+
+        <button type="submit" name="acao" value="atualizar">Atualizar</button>
+    </form>
 
 </body>
 </html>
