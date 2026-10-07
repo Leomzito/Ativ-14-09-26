@@ -1,33 +1,33 @@
 <?php
     // 1. DECLARAR O CAMINHO DO ARQUIVO JSON
-    $caminho = __DIR__ . "dados.json";
+    // $caminho = __DIR__ . "dados.json";
 
-    // 2. ABRIR/LER O ARQUIVO JSON
-    $json = file_get_contents($caminho);
+    // // 2. ABRIR/LER O ARQUIVO JSON
+    // $json = file_get_contents($caminho);
 
-    echo "DADOS REGISTRADOS EM dados.json";
-    // 3. TRANSFORMAR JSON EM ARRAY PHP
-    $alunos = json_decode($json, true);
+    // echo "DADOS REGISTRADOS EM dados.json";
+    // // 3. TRANSFORMAR JSON EM ARRAY PHP
+    // $alunos = json_decode($json, true);
 
-    // 4. CRIAR UM ALUNO
-    $novoAluno = [
-        "nome" => "Luiz",
-        "idade": => 30,
-        "curso": => "Desenvolvimento de Sistemas"
-    ];
+    // // 4. CRIAR UM ALUNO
+    // $novoAluno = [
+    //     "nome" => "Luiz",
+    //     "idade": => 30,
+    //     "curso": => "Desenvolvimento de Sistemas"
+    // ];
 
-    // 5. ADICIONAR O ALUNO NO ARRAY
-    $alunos[] = $novoAluno;
+    // // 5. ADICIONAR O ALUNO NO ARRAY
+    // $alunos[] = $novoAluno;
 
-    // 6. TRANSFORMAR ARRAY PHP EM JSON
-    $jsonAtualizado = json_encode($alunos, 
-    JSON_PRETTY_PRINT | 
-    JSON_UNSCAPED_UNICODE);
+    // // 6. TRANSFORMAR ARRAY PHP EM JSON
+    // $jsonAtualizado = json_encode($alunos, 
+    // JSON_PRETTY_PRINT | 
+    // JSON_UNSCAPED_UNICODE);
 
-    // 7. SALVAR NO ARQUIVO JSON
-    file_put_contents($caminho, $jsonAtualizado);
+    // // 7. SALVAR NO ARQUIVO JSON
+    // file_put_contents($caminho, $jsonAtualizado);
 
-    echo "DADOS REGISTRADOS EM dados.json";
+    // echo "DADOS REGISTRADOS EM dados.json";
 ?>
 <!DOCTYPE html>
 <html lang="en">
