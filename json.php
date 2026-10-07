@@ -56,12 +56,27 @@
 
             // SALVAR NO ARQUIVO
             file_put_contents($caminho, $jsonAtualizado);
-            //
-            //
-            //
-            //
+        }
 
-         }
+         if ($acao === "deletar") {
+
+            // PEGAR O NOME QUE QUEREMOS DELETAR
+            $nome = $_POST["nome"];
+
+            //PERCORRER TODOS OS ALUNOS
+            foreach($alunos as $posicao => $aluno) {
+
+                //VERIFICAR SE ENCONTROU O ALUNO
+                if ($aluno["nome"] === "nome") {
+
+                    //DELETAR O ALUNO DO ARRAY
+                    unset($alunos["posicao"]);
+                }
+            }
+
+            //REORGANIZAR OS ALUNOS
+            $alunos = array_values($alunos);
+        }
 
     }
 
@@ -105,6 +120,14 @@
         <input type="text" name="curso" maxlength="100" required>
 
         <button type="submit" name="acao" value="atualizar">Atualizar</button>
+    </form>
+
+    <h2>DELETAR CADASTRO</h2>
+    <form method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" maxlength="100" required>
+
+        <button type="submit" name="acao" value="deletar">Deletar</button>
     </form>
 
 </body>
