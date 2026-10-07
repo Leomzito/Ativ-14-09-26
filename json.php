@@ -6,7 +6,7 @@
     $json = file_get_contents($caminho);
 
     // 3. TRANSFORMAR JSON EM ARRAY PHP
-    $alunos = json_decode($json, true)
+    $alunos = json_decode($json, true);
 
     // 4. CRIAR UM ALUNO
     $novoAluno = [
