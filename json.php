@@ -11,9 +11,9 @@
     if($_SERVER["REQUEST_METHOD"]=="POST") {
     // 4. CRIAR UM ALUNO
     $novoAluno = [
-        "nome" => "Luiz",
-        "idade" => 30,
-        "curso" => "Desenvolvimento de Sistemas"
+        "nome" => $_POST["nome"],
+        "idade" => $_POST["idade"],
+        "curso" => $_POST["curso"]
     ];
 
     // 5. ADICIONAR O ALUNO NO ARRAY
