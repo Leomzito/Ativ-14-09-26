@@ -21,7 +21,7 @@
     // 6. TRANSFORMAR ARRAY PHP EM JSON
     $jsonAtualizado = json_encode($alunos, 
     JSON_PRETTY_PRINT | 
-    JSON_UNSCAPED_UNICODE);
+    JSON_UNESCAPED_UNICODE);
 
     // 7. SALVAR NO ARQUIVO JSON
     file_put_contents($caminho, $jsonAtualizado);
