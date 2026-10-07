@@ -1,7 +1,7 @@
-body {
+﻿body {
     margin: 0;
     font-size: medium;
-    background-color: #eeeeee;
+    background-color: #e9e7e2;
     font-family: Arial, sans-serif;
 }
 
@@ -39,7 +39,7 @@ button {
     background-color: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 6px #aaaaaa;
+    box-shadow: 0 2px 6px #c5c2bc;
 }
 
 .container h2 {
@@ -53,16 +53,17 @@ button {
 }
 
 .aprovado {
-    background-color: #c8e6c9;
-    color: #1b5e20;
+    background-color: #dce6dc;
+    color: #405744;
 }
 
 .recuperacao {
-    background-color: #fff3cd;
-    color: #856404;
+    background-color: #eee6d3;
+    color: #6d5d3b;
 }
 
 .reprovado {
-    background-color: #f8d7da;
-    color: #842029;
+    background-color: #eadbdd;
+    color: #704c50;
 }
+

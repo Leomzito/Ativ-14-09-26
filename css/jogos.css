@@ -1,7 +1,7 @@
 ﻿body {
     margin: 0;
     font-size: medium;
-    background-color: #eeeeee;
+    background-color: #e9e7e2;
     font-family: Arial, sans-serif;
 }
 
@@ -18,7 +18,7 @@ form {
     box-sizing: border-box;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 6px #aaaaaa;
+    box-shadow: 0 2px 6px #c5c2bc;
 }
 
 label {
@@ -53,8 +53,8 @@ body > p {
     padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
-    background-color: #c8e6c9;
-    color: #1b5e20;
+    background-color: #dce6dc;
+    color: #405744;
     text-align: center;
 }
 
@@ -72,6 +72,6 @@ nav a {
 .tabela_jogos {
     border-radius: 8px;
     border-color: #333333;
-    box-shadow: 0 2px 6px #aaaaaa;
-    background-color: rgb(206, 206, 206);
+    box-shadow: 0 2px 6px #c5c2bc;
+    background-color: #e2e0db;
 }

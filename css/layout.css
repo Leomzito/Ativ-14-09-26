@@ -1,4 +1,4 @@
-/* CONFIGURAÇÕES GERAIS */
+﻿/* CONFIGURAÃ‡Ã•ES GERAIS */
 * {
     margin: 0;
     padding: 0;
@@ -16,10 +16,10 @@ body {
     line-height: 1.6;
 }
 
-/* MENU / CABEÇALHO
+/* MENU / CABEÃ‡ALHO
 Mesmo estilo utilizado no index.php */
 header {
-    background-color: #111827;
+    background-color: #343b43;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -50,10 +50,10 @@ header {
 }
 
 .menu a:hover {
-    color: #60a5fa;
+    color: #a7b6c4;
 }
 
-/*PÁGINA DO PROJETO*/
+/*PÃGINA DO PROJETO*/
 .pagina-projeto {
     min-height: calc(100vh - 150px);
     max-width: 1100px;
@@ -61,13 +61,13 @@ header {
     padding: 60px 20px 80px;
 }
 
-/*CABEÇALHO DO PROJETO*/
+/*CABEÃ‡ALHO DO PROJETO*/
 .cabecalho-projeto {
     margin-bottom: 40px;
 }
 
 .projeto-tipo {
-    color: #2563eb;
+    color: #596f82;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -76,7 +76,7 @@ header {
 
 .cabecalho-projeto h1 {
     font-size: 40px;
-    color: #111827;
+    color: #343b43;
     margin-bottom: 10px;
 }
 
@@ -86,8 +86,8 @@ header {
     max-width: 700px;
 }
 
-/*ÁREA DA ATIVIDADE
-Aqui ficará o conteúdo específico
+/*ÃREA DA ATIVIDADE
+Aqui ficarÃ¡ o conteÃºdo especÃ­fico
 desenvolvido em jogos.php, idade.php,
 notas.php etc. */
 
@@ -105,7 +105,7 @@ notas.php etc. */
 }
 
 .voltar-projetos a {
-    color: #2563eb;
+    color: #596f82;
     text-decoration: none;
     font-weight: bold;
 }
@@ -114,16 +114,16 @@ notas.php etc. */
     text-decoration: underline;
 }
 
-/*RODAPÉ*/
+/*RODAPÃ‰*/
 footer {
-    background-color: #111827;
+    background-color: #343b43;
     color: #cccccc;
     text-align: center;
     padding: 30px;
 }
 
 footer a {
-    color: #60a5fa;
+    color: #a7b6c4;
     text-decoration: none;
 }
 
