@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 require __DIR__ . "/../conexao.php";
 
@@ -47,7 +47,7 @@ $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de jogos</title>
-    <link rel="stylesheet" href="/../jogos.css">
+    <link rel="stylesheet" href="../css/jogos.css">
 </head>
 <body>
     <nav>
