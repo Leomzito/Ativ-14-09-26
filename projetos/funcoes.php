@@ -1,7 +1,7 @@
-<?php
+<?php 
 
     function apresentarSistema() {
-        echo "Bem vindo(a) ao Help Desk";
+        echo "Bem vindo(a) ao Hekp Desk!";
     }
 
     apresentarSistema();
@@ -10,15 +10,15 @@
         echo "$nome abriu um chamado: $problema";
     }
 
-    $nome = $_POST["nome"];
-    $problema = $_POST["problema"];
-    abrirChamado ("Luiz", "Impressora não funciona");
+    //$nome = $_POST["nome"];
+    //$problema = $_POST["problema"];
 
-    function contarChamados($quantidade) {
+    abrirChamado("Lucas", "Impressora não funciona");
+
+    function contarChamados($quantidade){
         return "Existem $quantidade chamados registrados";
     }
 
     $resultado = contarChamados(5);
-
-
+    //echo $resultado;
 ?>

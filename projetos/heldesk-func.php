@@ -1,84 +1,136 @@
-<?php
+<?php 
 
-function lerChamados() {
-    $arquivo = "chamados.json";
+    //READ - Ler todos os chamados 
+    function lerChamados() {
+        $arquivo = __DIR__ . "/chamados.json";
 
-    if (file_exists($arquivo)) {
+        //verificação se o arquivo .json já existe
+        if (!file_exists($arquivo)) {
+            file_put_contents($arquivo, "[]");
+        }
+
+        // Ler o arquivo
         $conteudo = file_get_contents($arquivo);
-        return json_decode($conteudo, true) ?? [];
-    }   
-    return [];
-} 
 
-function salvarChamados($chamados) {
-    $arquivo = "chamados.json";
-    $json = json_encode($chamados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    file_put_contents($arquivo, $json);
-}
+        // Converter o JSON para Array PHP
+        $chamados = json_decode($conteudo, true);
 
-function cadastrarChamados($nome, $setor, $equipamento, $descricao, $prioridade) {
-    if (!empty($nome) && !empty($descricao)) {
+        return is_array($chamados) ? $chamados : [];
+
+        // if (is_array($chamados)) {
+        //     $chamados;
+        // } else {
+        //     [];
+        // }
+    }
+
+
+    //Salvar os chamados no JSON
+    function salvarChamados($chamados) {
+        $arquivo = __DIR__ . "/chamados.json";
+
+        return file_put_contents(
+            $arquivo, json_encode($chamados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+        ) !== false;
+    }
+
+    //CREATE - Cadastrar chamados
+    function cadastrarChamados($nome, $setor, $eqipamento, $descricao, $prioridade) {
+        if (trim($nome) === "" || trim($descricao) === "") {
+            return false;
+        }
+
         $chamados = lerChamados();
-
+        
         $novoChamado = [
-            "nome" => $nome,
+            "nome" => trim($nome),
             "setor" => $setor,
-            "equipamento" => $equipamento,
-            "descricao" => $descricao,
+            "equipamento" => $eqipamento,
+            "descricao" => trim($descricao),
             "prioridade" => $prioridade,
             "status" => "Aberto"
         ];
 
         $chamados[] = $novoChamado;
-        salvarChamados($chamados);
 
-        return true;
+        return salvarChamados($chamados);
     }
-    return false;
-}
 
-function atualizarStatusChamado($posicao, $novoStatus) {
-    $chamados = lerChamados();
+    //UPDATE - Atualizar status do chamado
+    function atualizarChamado($posicao, $novoStatus) {
+        $chamados = lerChamados();
 
-    if (isset($chamados[$posicao])) {
+        $statusPermitidos = [
+            "Aberto",
+            "Em andamento",
+            "Resolvido"
+        ];
+
+        //isset() verefica se uma variável ou posição existe e não contém null.
+        // O ! inverte o resultado.
+        // Portanto:
+        // "Se não existir um chamado naquela posição, encerre a função retornando false
+
+        if (!isset($chamados[$posicao])) {
+            return false;
+        }
+
+        // in_array() verefica se um valor existe dentro de um array.
+        // Nesse caso:
+        // - $novoStatus: valor que queremos procurar.
+        // - $statusPermitidos: lista de valores aceitos.
+        // - true: exige comparação estrita.
+        // O ! significa que a condição será verdadeira quando o valor não estiver na lista.
+
+        if (!in_array($novoStatus, $statusPermitidos, true)) {
+            return false;
+        }
+
         $chamados[$posicao]["status"] = $novoStatus;
-        salvarChamados($chamados);
-        return true;
+
+        return salvarChamados($chamados);
     }
 
-    return false;
-}
+    //DELETE - Excluir chamados
+    function excluirChamado($posicao) {
+        $chamados = lerChamados();
 
-function excluirChamado($posicao) {
-    $chamados = lerChamados();
+        if (!isset($chamados[$posicao])) {
+            return false;
+        }
 
-    if (isset($chamados[$posicao])) {
+        // DELETAR AQUELA POSIÇÃO ESPECIFICA
         unset($chamados[$posicao]);
+
+
+        // ATUALIZAR A LISTA DE CHAMADOS EM ARRAY
         $chamados = array_values($chamados);
 
-        salvarChamados($chamados);
-        return true;
+        //SALVAR OS CHAMADOS NOVAMENTE PELA FUNÇÃO salvarChamados
+        return salvarChamados($chamados);
     }
 
-    return false;
-}
+    //Relatório de atendimentos
+    function gerarRelatorio() {
+        $chamados = lerChamados();
 
-function gerarRelatorio($chamados) {
-    $total = count($chamados);
-    $abertos = 0;
-    $emAndamento = 0;
-    $resolvidos = 0;
+        $relatorio = [
+            "total" => count($chamados),
+            "abertos" => 0,
+            "andamento" => 0,
+            "resolvidos" => 0
+        ];
 
-    foreach ($chamados as $chamado) {
-        if ($chamado["status"] == "Aberto") $abertos++;
-        if ($chamado["status"] == "Em andamento") $emAndamento++;
-        if ($chamado["status"] == "Resolvido") $resolvidos++;
+        foreach ($chamados as $chamado) {
+            if ($chamado["status"] === "Aberto") {
+                $relatorio["abertos"]++;
+            } elseif ($chamado["status"] === "Em andamento") {
+                $relatorio["andamento"]++;
+            } elseif ($chamado["status"] === "Resolvido") {
+                $relatorio["resolvidos"]++;
+            }
+        }
+
+        return $relatorio;
     }
-
-    return [
-        "total" => $total,
-        "abertos" => $abertos,
-        "em_andamento" => $emAndamento,
-        "resolvidos" => $resolvidos
-    ];
-}
+?>
