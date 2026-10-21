@@ -7,7 +7,7 @@
     $rota = $_GET['rota'] ?? "portfolio";
 
     // Definindo  a variável de verificação de método PHP requisitado.
-    $metodo = $_SERVER['REQUST_METHOD'];
+    $metodo = $_SERVER['REQUEST_METHOD'];
 
     // verificando se a rota existe, se nao existir, define status 404.
     if (!isset($rotas[$metodo][$rota])) {
