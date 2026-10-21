@@ -6,8 +6,7 @@
     return[
         'GET' => [   
             'portfolio' => [new PortfolioController(), 'index'],
-            'helpdesk' => [new HelpdeskController(), 'index'],
-            'jogos' => [],
+            'helpdesk' => [new HelpdeskController(), 'index']
             //outras atividades...
         ],
         'POST' => [
