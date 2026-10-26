@@ -1,5 +1,5 @@
 <?php
-    require "conexao.php";
+    require __DIR__ . "/../../config/conexao.php";
 
     echo "<br>Meu sistema está conectado!";
 
