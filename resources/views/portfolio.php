@@ -235,15 +235,22 @@
             <div class="contato-container">
                 <div class="contato-item">
                     <h3>Email</h3>
-                    <p>leom3108@outlook.com</p>
+                    <a href="mailto:leom3108@outlook.com">leom3108@outlook.com</a>
                 </div>
+
                 <div class="contato-item">
                     <h3>GitHub</h3>
-                    <p>https://github.com/Leomzito</p>
+                    <a href="https://github.com/Leomzito" target="_blank" rel="noopener noreferrer">
+                        github.com/Leomzito
+                    </a>
                 </div>
+
                 <div class="contato-item">
                     <h3>LinkedIn</h3>
-                    <p>https://www.linkedin.com/in/luiz-eduardo-oliveira-muraski-151227184/</p>
+                    <a href="https://www.linkedin.com/in/luiz-eduardo-oliveira-muraski-151227184/"
+                    target="_blank" rel="noopener noreferrer">
+                        Meu perfil no LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
