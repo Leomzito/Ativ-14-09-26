@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . "/../../config/conexao.php";
-
 session_start();
 
 $usuarioCorreto = "leomzito";
@@ -28,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login</title>
-    <link rel="stylesheet" href="/../../../css/login.css">
+    <link rel="stylesheet" href="/resources/css/login.css">
 </head>
 <body>
-    <nav><a href="/../index.php">Página inicial</a></nav>
+    <nav><a href="/index.php">Página inicial</a></nav>
     <div class="caixa-login">
         <h1>Login</h1>
         <form method="POST" action="login.php">

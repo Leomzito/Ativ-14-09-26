@@ -18,8 +18,6 @@ try{
         PDO::ERRMODE_EXCEPTION
     );
 
-    echo "Conectado com sucesso";
-
 } catch (PDOException $erro) {
     echo "Erro ao conectar:".$erro->getMessage();
 }

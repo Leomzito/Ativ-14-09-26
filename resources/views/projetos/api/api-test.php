@@ -38,11 +38,12 @@
         //Verifica se os dados são válidos
         if (!is_array($dados) || // O JSON não foi convertido em array
         !isset($dados['titulo']) || // O titulo não foi informado ou é nulo
-        !is_string($dados['titulo'] || // O título não é um texto
+        !is_string($dados['titulo']) || // O título não é um texto
         trim($dados['titulo']) === '') // O título está vazio ou contém apenas espaços
         ) {
             http_response_code(400); 
             echo json_encode(["erro" => "Título obrigatório"]);
+            exit;
         }
         // Simula a criação de um chamado novo
         $novoChamado = [

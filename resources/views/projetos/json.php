@@ -1,6 +1,6 @@
 <?php
     // 1. DECLARAR O CAMINHO DO ARQUIVO JSON
-    $caminho = __DIR__ . "/../../data/dados.json";
+    $caminho = __DIR__ . "/../../../storage/data/dados.json";
 
     // 2. ABRIR/LER O ARQUIVO JSON
     $json = file_get_contents($caminho);
@@ -67,15 +67,17 @@
             foreach($alunos as $posicao => $aluno) {
 
                 //VERIFICAR SE ENCONTROU O ALUNO
-                if ($aluno["nome"] === "nome") {
+                if ($aluno["nome"] === $nome) {
 
                     //DELETAR O ALUNO DO ARRAY
-                    unset($alunos["posicao"]);
+                    unset($alunos[$posicao]);
                 }
             }
 
             //REORGANIZAR OS ALUNOS
             $alunos = array_values($alunos);
+            $jsonAtualizado = json_encode($alunos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+            file_put_contents($caminho, $jsonAtualizado);
         }
 
     }

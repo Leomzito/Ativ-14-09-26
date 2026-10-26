@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/../../config/conexao.php";
+require __DIR__ . "/../../../config/conexao.php";
 
 session_start();
 if (empty($_SESSION["autenticado"])) {
@@ -47,11 +47,11 @@ $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de jogos</title>
-    <link rel="stylesheet" href="/../../../css/jogos.css">
+    <link rel="stylesheet" href="/resources/css/jogos.css">
 </head>
 <body>
     <nav>
-    <a href="/../index.php">Página inicial</a>
+    <a href="/index.php">Página inicial</a>
     </nav>
     <h1>Cadastrar jogo</h1>
 

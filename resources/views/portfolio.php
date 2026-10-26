@@ -128,7 +128,7 @@
                         <span>CSS</span>
                         <span>PHP</span>                        
                     </div>
-                    <a href="views/projetos/idade.php" class="link-projeto">
+                    <a href="/resources/views/projetos/idade.php" class="link-projeto">
                         Ver projeto ->
                     </a>
                 </div>
@@ -150,7 +150,7 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    <a href="projetos/notas.php" class="link-projeto">
+                    <a href="/resources/views/projetos/notas.php" class="link-projeto">
                         Ver projeto ->
                     </a>
                 </div>
@@ -172,7 +172,7 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    <a href="projetos/notas_get.php" class="link-projeto">
+                    <a href="/resources/views/projetos/notas_get.php" class="link-projeto">
                         Ver projeto ->
                     </a>
                 </div>
@@ -194,7 +194,7 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    <a href="projetos/login.php" class="link-projeto">
+                    <a href="/resources/views/projetos/login.php" class="link-projeto">
                         Ver projeto ->
                     </a>
                 </div>
@@ -218,7 +218,7 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    <a href="projetos/jogos.php" class="link-projeto">
+                    <a href="/resources/views/projetos/jogos.php" class="link-projeto">
                         Ver projeto ->
                     </a>
                 </div>

@@ -1,11 +1,9 @@
 <?php
 
-require __DIR__ . "/../../config/conexao.php";
-
     $nome = "";
     $idade = 0;
     $resposta= "";
-    if ($_SERVER ["REQUEST_METHOD"] == "GET"){
+    if ($_SERVER ["REQUEST_METHOD"] == "GET" && isset($_GET["nome"], $_GET["idade"], $_GET["nota1"], $_GET["nota2"], $_GET["nota3"], $_GET["nota4"], $_GET["nota5"])){
         $nome = $_GET["nome"];
         $idade = $_GET["idade"];
         $nota1 = $_GET["nota1"];
@@ -31,12 +29,12 @@ require __DIR__ . "/../../config/conexao.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/../../../css/style.css">
+    <link rel="stylesheet" href="/resources/css/style.css">
     <title>Verificador de Notas</title>
 </head>
 <body>
     <nav>
-    <a href="/../index.php">Página inicial</a>
+    <a href="/index.php">Página inicial</a>
     </nav>
     <form method="GET">
         <input type = "text" id="nome" name="nome" placeholder="Digite o nome">
