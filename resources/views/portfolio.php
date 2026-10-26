@@ -222,6 +222,27 @@
                         Ver projeto ->
                     </a>
                 </div>
+
+                <!--PROJETO 6 -->
+
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        06
+                    </div>
+                    <h3>Helpdesk de TI</h3>
+                    <p>
+                        Sistema para registrar chamados de suporte técnico,
+                        acompanhar atendimentos e gerenciar o status das solicitações.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="/resources/views/projetos/helpdesk.php" class="link-projeto">
+                        Ver projeto ->
+                    </a>
+                </div>
             </div>
         </section>
 

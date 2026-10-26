@@ -205,6 +205,15 @@ header {
     padding: 30px;
 }
 
+.mensagem {
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background-color: #e1eee5;
+    color: #3f684b;
+    text-align: center;
+}
+
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

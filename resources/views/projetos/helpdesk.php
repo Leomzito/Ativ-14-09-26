@@ -1,38 +1,43 @@
 <?php
 
-require_once "helpdesk-func.php";
+$caminhoModelo = __DIR__ . "/../../../app/Models/Chamado.php";
+require_once $caminhoModelo;
+
+$modelo = new Chamado();
+$mensagem = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $acao = $_POST["acao"] ?? "";
 
-    if ($acao == "cadastrar") {
-        $nome = $_POST["nome"] ?? "";
-        $setor = $_POST["setor"] ?? "";
-        $equipamento = $_POST["equipamento"] ?? "";
-        $descricao = $_POST["descricao"] ?? "";
-        $prioridade = $_POST["prioridade"] ?? "";
-
-        cadastrarChamados($nome, $setor, $equipamento, $descricao, $prioridade);
-    } 
-    else if ($acao == "atualizar") {
-        $posicao = $_POST["posicao"] ?? null;
-        $novoStatus = $_POST["status"] ?? "";
-
-        if ($posicao !== null) {
-            atualizarStatusChamado($posicao, $novoStatus);
-        }
-    }           
-    else if ($acao == "excluir") {
-        $posicao = $_POST["posicao"] ?? null;
-
-        if ($posicao !== null) {
-            excluirChamado($posicao);
-        }
+    if ($acao === "cadastrar") {
+        $sucesso = $modelo->cadastrarChamados(
+            $_POST["nome"] ?? "",
+            $_POST["setor"] ?? "",
+            $_POST["equipamento"] ?? "",
+            $_POST["descricao"] ?? "",
+            $_POST["prioridade"] ?? ""
+        );
+    } elseif ($acao === "atualizar") {
+        $posicao = filter_input(INPUT_POST, "posicao", FILTER_VALIDATE_INT);
+        $sucesso = $posicao !== false && $posicao !== null
+            ? $modelo->atualizarChamado($posicao, $_POST["status"] ?? "")
+            : false;
+    } elseif ($acao === "excluir") {
+        $posicao = filter_input(INPUT_POST, "posicao", FILTER_VALIDATE_INT);
+        $sucesso = $posicao !== false && $posicao !== null
+            ? $modelo->excluirChamado($posicao)
+            : false;
+    } else {
+        $sucesso = false;
     }
+
+    $mensagem = $sucesso
+        ? "Operação realizada com sucesso!"
+        : "Não foi possível realizar a operação.";
 }
 
-$chamados = lerChamados();
-$relatorio = gerarRelatorio($chamados);
+$chamados = $modelo->lerChamados();
+$relatorio = $modelo->gerarRelatorio();
 
 ?>
 <!DOCTYPE html>
@@ -84,7 +89,7 @@ $relatorio = gerarRelatorio($chamados);
             </div>
             <div class="card-stat em-andamento">
                 <h3>Em Andamento</h3>
-                <div class="card-stat-numero"><?php echo $relatorio["em_andamento"]; ?></div>
+                <div class="card-stat-numero"><?php echo $relatorio["andamento"]; ?></div>
             </div>
             <div class="card-stat resolvidos">
                 <h3>Resolvidos</h3>
@@ -99,6 +104,9 @@ $relatorio = gerarRelatorio($chamados);
         <p class="subtitulo-secao">Preencha o formulário abaixo para solicitar suporte técnico</p>
 
         <div class="formulario-card">
+            <?php if ($mensagem !== ""): ?>
+                <p class="mensagem" role="status"><?php echo htmlspecialchars($mensagem, ENT_QUOTES, "UTF-8"); ?></p>
+            <?php endif; ?>
             <form method="POST">
                 <input type="hidden" name="acao" value="cadastrar">
 
