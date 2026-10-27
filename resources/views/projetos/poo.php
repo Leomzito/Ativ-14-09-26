@@ -11,7 +11,7 @@
     // Mostrar o que é necessário e esconder detalhes complicados de funcionamento
 
     // Exemplo com POO
-    class Personagem {
+    abstract class Personagem {
         public $nome;
         private $vida = 0;
         public $dano;
@@ -33,11 +33,12 @@
                 echo "A vida não pode ser negativa!\n";
                 return;
             }
+
+            $this->vida=$vida;
         }
 
-        public function atacar () {
-            echo "$this->nome realizou um ataque!";
-        }
+        // Toda classe filha deverá implementar atacar()
+        abstract public function atacar();
     }
 
     $luiz = new Personagem("Luiz", 100, 10);
@@ -67,15 +68,30 @@
         }
     }
 
+    class Curandeiro extends Personagem {
+        // Sobrescrevendo o método da classe pai
+        public function atacar() {
+            echo "$this->nome atacou com uma faca!\n";
+        }
+    }
+
+    public function curar(Personagem $alvo, int $quantidade) {
+        $novaVida = $alvo->getVida() + $quantidade;
+        $alvo->setVida($novaVida);
+        echo "$this->nome !\n";
+    }
+
     $guerreiro = new Guerreiro("Luiz", 100, 10);
     $mago = new Mago("Aurora", 50, 5);
-    $personagem = new Personagem("Chloe", 30,3);
+    $$curandeiro = new Curandeiro("Chloe", 30,3);
 
-    $personagens = [$guerreiro, $mago, $personagem];
+    $personagens = [$guerreiro, $mago, $curandeiro];
 
     foreach($personagem as $p) {
         $p->atacar();
     }
+
+    $curandeiro->curar($guerreiro, 50);
 
     // https://luiz315.devlook.xyz/resources/views/projetos/poo.php
 
