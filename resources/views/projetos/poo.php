@@ -1,5 +1,5 @@
-﻿//POO = Programação orientada a objetos
-<?php
+﻿<?php
+// POO = Programação orientada a objetos
 
     // ENCAPSULAMENTO
     // Proteger informações para que não sejam alteradas de qualquer jeito
@@ -40,17 +40,7 @@
         // Toda classe filha deverá implementar atacar()
         abstract public function atacar();
     }
-
-    $luiz = new Personagem("Luiz", 100, 10);
-
-    $luiz->setVida(50);
-
-    $aurora = new Personagem("Aurora", 50, 5);
-    $chloe = new Personagem("Chloe", 30, 3);
-
-    $luiz->atacar(); //método próprio
-
-    class Guerreiro extends Personagem {
+class Guerreiro extends Personagem {
         // Sobrescrevendo o método da classe pai
         public function atacar() {
             echo "$this->nome atacou com uma espada!\n";
@@ -73,21 +63,21 @@
         public function atacar() {
             echo "$this->nome atacou com uma faca!\n";
         }
-    }
-
-    public function curar(Personagem $alvo, int $quantidade) {
-        $novaVida = $alvo->getVida() + $quantidade;
-        $alvo->setVida($novaVida);
-        echo "$this->nome !\n";
+    
+        public function curar(Personagem $alvo, int $quantidade) {
+            $novaVida = $alvo->getVida() + $quantidade;
+            $alvo->setVida($novaVida);
+            echo "$this->nome curou {$alvo->nome} em $quantidade pontos!\n";
+        }
     }
 
     $guerreiro = new Guerreiro("Luiz", 100, 10);
     $mago = new Mago("Aurora", 50, 5);
-    $$curandeiro = new Curandeiro("Chloe", 30,3);
+    $curandeiro = new Curandeiro("Chloe", 30,3);
 
     $personagens = [$guerreiro, $mago, $curandeiro];
 
-    foreach($personagem as $p) {
+    foreach ($personagens as $p) {
         $p->atacar();
     }
 
@@ -107,3 +97,5 @@
     //4. O que significa extends?
     //Herdar caracterí­sticas e métodos de outra classe
 ?>
+
+
