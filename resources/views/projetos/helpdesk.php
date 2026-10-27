@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 $caminhoModelo = __DIR__ . "/../../../app/Models/Chamado.php";
 require_once $caminhoModelo;
@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $mensagem = $sucesso
-        ? "Operação realizada com sucesso!"
-        : "Não foi possível realizar a operação.";
+        ? "OperaÃ§Ã£o realizada com sucesso!"
+        : "NÃ£o foi possÃ­vel realizar a operaÃ§Ã£o.";
 }
 
 $chamados = $modelo->lerChamados();
@@ -45,7 +45,7 @@ $relatorio = $modelo->gerarRelatorio();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helpdesk TI - Suporte Técnico</title>
+    <title>Helpdesk TI - Suporte TÃ©cnico</title>
     <link rel="stylesheet" href="/resources/css/helpdesk.css">
 </head>
 <body>
@@ -55,28 +55,29 @@ $relatorio = $modelo->gerarRelatorio();
         <div class="navbar">
             <div class="logo">Helpdesk <span>TI</span></div>
             <ul class="menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#relatorio">Relatório</a></li>
+                <li><a href="/index.php">Página inicial</a></li>
+                <li><a href="#inicio">InÃ­cio</a></li>
+                <li><a href="#relatorio">RelatÃ³rio</a></li>
                 <li><a href="#novo-chamado">Novo Chamado</a></li>
                 <li><a href="#chamados">Chamados</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- INÍCIO / HERO -->
+    <!-- INÃCIO / HERO -->
     <section class="inicio" id="inicio">
         <div class="inicio-conteudo">
-            <p class="saudacao">Setor de Tecnologia da Informação</p>
+            <p class="saudacao">Setor de Tecnologia da InformaÃ§Ã£o</p>
             <h1>Gerenciamento de Chamados</h1>
-            <p>Registre problemas técnicos, acompanhe o andamento dos atendimentos e gerencie o suporte da empresa em um só lugar.</p>
+            <p>Registre problemas tÃ©cnicos, acompanhe o andamento dos atendimentos e gerencie o suporte da empresa em um sÃ³ lugar.</p>
             <a href="#novo-chamado" class="botao">Abrir Chamado</a>
         </div>
     </section>
 
-    <!-- SEÇÃO RELATÓRIO -->
+    <!-- SEÃ‡ÃƒO RELATÃ“RIO -->
     <section class="secao" id="relatorio">
-        <h2 class="titulo-secao">Relatório de Atendimentos</h2>
-        <p class="subtitulo-secao">Resumo estatístico dos chamados registrados no sistema</p>
+        <h2 class="titulo-secao">RelatÃ³rio de Atendimentos</h2>
+        <p class="subtitulo-secao">Resumo estatÃ­stico dos chamados registrados no sistema</p>
         
         <div class="relatorio-container">
             <div class="card-stat">
@@ -98,10 +99,10 @@ $relatorio = $modelo->gerarRelatorio();
         </div>
     </section>
 
-    <!-- SEÇÃO FORMULÁRIO (DESTAQUE) -->
+    <!-- SEÃ‡ÃƒO FORMULÃRIO (DESTAQUE) -->
     <section class="secao-destaque" id="novo-chamado">
         <h2 class="titulo-secao">Abrir Novo Chamado</h2>
-        <p class="subtitulo-secao">Preencha o formulário abaixo para solicitar suporte técnico</p>
+        <p class="subtitulo-secao">Preencha o formulÃ¡rio abaixo para solicitar suporte tÃ©cnico</p>
 
         <div class="formulario-card">
             <?php if ($mensagem !== ""): ?>
@@ -119,9 +120,9 @@ $relatorio = $modelo->gerarRelatorio();
                     <div class="form-group">
                         <label for="setor">Setor da Empresa:</label>
                         <select name="setor" id="setor">
-                            <option value="Produção">Produção</option>
+                            <option value="ProduÃ§Ã£o">ProduÃ§Ã£o</option>
                             <option value="Administrativo">Administrativo</option>
-                            <option value="Logística">Logística</option>
+                            <option value="LogÃ­stica">LogÃ­stica</option>
                             <option value="Financeiro">Financeiro</option>
                             <option value="TI">TI</option>
                         </select>
@@ -142,14 +143,14 @@ $relatorio = $modelo->gerarRelatorio();
                         <label for="prioridade">Prioridade:</label>
                         <select name="prioridade" id="prioridade">
                             <option value="Baixa">Baixa</option>
-                            <option value="Média">Média</option>
+                            <option value="MÃ©dia">MÃ©dia</option>
                             <option value="Alta">Alta</option>
                         </select>
                     </div>
 
                     <div class="form-group full-width">
-                        <label for="descricao">Descrição do Problema:</label>
-                        <textarea id="descricao" name="descricao" placeholder="Descreva detalhadamente a falha ou solicitação..." required></textarea>
+                        <label for="descricao">DescriÃ§Ã£o do Problema:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Descreva detalhadamente a falha ou solicitaÃ§Ã£o..." required></textarea>
                     </div>
                 </div>
 
@@ -158,7 +159,7 @@ $relatorio = $modelo->gerarRelatorio();
         </div>
     </section>
 
-    <!-- SEÇÃO LISTAGEM DE CHAMADOS -->
+    <!-- SEÃ‡ÃƒO LISTAGEM DE CHAMADOS -->
     <section class="secao" id="chamados">
         <h2 class="titulo-secao">Lista de Chamados</h2>
         <p class="subtitulo-secao">Consulte, altere o status ou exclua os chamados registrados</p>
@@ -171,17 +172,17 @@ $relatorio = $modelo->gerarRelatorio();
                         <th>Solicitante</th>
                         <th>Setor</th>
                         <th>Equipamento</th>
-                        <th>Descrição</th>
+                        <th>DescriÃ§Ã£o</th>
                         <th>Prioridade</th>
                         <th>Status</th>
-                        <th>Ações</th>
+                        <th>AÃ§Ãµes</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (empty($chamados)): ?>
                         <tr>
                             <td colspan="8" style="text-align: center; color: #777; padding: 30px;">
-                                Nenhum chamado registrado até o momento.
+                                Nenhum chamado registrado atÃ© o momento.
                             </td>
                         </tr>
                     <?php else: ?>
@@ -195,7 +196,7 @@ $relatorio = $modelo->gerarRelatorio();
                                 <td>
                                     <?php 
                                         $prioridadeClass = strtolower($chamado['prioridade']);
-                                        if ($prioridadeClass == 'média' || $prioridadeClass == 'media') $prioridadeClass = 'media';
+                                        if ($prioridadeClass == 'mÃ©dia' || $prioridadeClass == 'media') $prioridadeClass = 'media';
                                     ?>
                                     <span class="badge badge-prioridade-<?php echo $prioridadeClass; ?>">
                                         <?php echo ucfirst($chamado['prioridade']); ?>
@@ -229,10 +230,11 @@ $relatorio = $modelo->gerarRelatorio();
         </div>
     </section>
 
-    <!-- RODAPÉ -->
+    <!-- RODAPÃ‰ -->
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> Helpdesk TI - Sistema de Gerenciamento de Chamados Técnicos</p>
+        <p>&copy; <?php echo date("Y"); ?> Helpdesk TI - Sistema de Gerenciamento de Chamados TÃ©cnicos</p>
     </footer>
 
 </body>
 </html>
+

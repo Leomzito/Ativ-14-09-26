@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    $mensagem = "UsuÃ¡rio ou senha incorretos";
+    $mensagem = "Usuário ou senha incorretos";
 }
 ?>
 <!DOCTYPE html>
@@ -25,15 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PÃ¡gina de Login</title>
+    <title>Página de Login</title>
     <link rel="stylesheet" href="/resources/css/login.css?v=20261027">
 </head>
 <body>
-    <nav><a href="/index.php">PÃ¡gina inicial</a></nav>
+    <nav><a href="/index.php">Página inicial</a></nav>
     <div class="caixa-login">
         <h1>Login</h1>
         <form method="POST" action="login.php">
-            <label for="usuario">UsuÃ¡rio:</label>
+            <label for="usuario">Usuário:</label>
             <input type="text" id="usuario" name="usuario" required>
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>

@@ -83,8 +83,8 @@ $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>GÃªnero</th>
-                <th>Ano de lanÃ§amento</th>
+                <th>Gênero</th>
+                <th>Ano de lançamento</th>
                 <th>Nota</th>
             </tr>
             
