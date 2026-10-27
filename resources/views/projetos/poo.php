@@ -5,7 +5,7 @@
     // Proteger informações para que não sejam alteradas de qualquer jeito
     // HERANÇA
     // Criar uma classe nova aproveitando caracterÃ­sticas de outra
-    // POLIFORMISMO
+    // POLIMORFISMO
     // Permitir que objetos diferentes respondam a mesma ação de maneiras diferentes
     // ABSTRAÇÃO
     // Mostrar o que é necessário e esconder detalhes complicados de funcionamento
@@ -70,6 +70,14 @@
     $guerreiro = new Guerreiro("Luiz", 100, 10);
     $mago = new Mago("Aurora", 50, 5);
     $personagem = new Personagem("Chloe", 30,3);
+
+    $personagens = [$guerreiro, $mago, $personagem];
+
+    foreach($personagem as $p) {
+        $p->atacar();
+    }
+
+    // https://luiz315.devlook.xyz/resources/views/projetos/poo.php
 
     //1. O que é uma classe?
     //Um molde para criar objetos
