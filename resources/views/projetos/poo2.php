@@ -120,10 +120,11 @@
         <p>Cadastre máquinas e acompanhe a produção</p>
     </header>
 
-    <?php if (!empty($mensagem)){ ?>
+    <?php if (!empty($mensagem)): ?>
         <p><strong><?php echo escapar($mensagem); ?></strong></p>
-    <?php endif} ?>
+    <?php endif; ?>
 
+    <h2>Cadastrar nova máquina</h2>
     <form method="POST" action="">
         <label for="nome">Nome da máquina</label><br>
         <input type="text" id=nome name="nome" required><br><br>
@@ -145,9 +146,9 @@
 
     <h2>Máquinas Cadastradas</h2>
 
-    <?php if(empty($_SESSION["maquinas"])){ ?>
-        <p>Nenhuma máquina cadastrada atá o momento</p>
-    <?php else} ?>
+    <?php if (empty($_SESSION["maquinas"])): ?>
+        <p>Nenhuma máquina cadastrada até o momento.</p>
+    <?php else: ?>
         <table border="1">
             <thread>
                 <tr>
@@ -158,7 +159,7 @@
                 </th>
             </thread>
             <tbody>
-                <?php foreach ($_SESSION["maquinas"] as $maq) { ?>
+                <?php foreach ($_SESSION["maquinas"] as $maq): ?>
                     <tr>
                         <td><?php echo escapar ($maq->nome); ?></td>
                         <td><?php echo escapar (get_class($maq)); ?></td>
