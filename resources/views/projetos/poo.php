@@ -13,12 +13,12 @@
     // Exemplo com POO
     abstract class Personagem {
         public $nome;
-        private $vida = 0;
-        public $dano;
+        private $vida = 100;
+        public $dano = 10;
 
         public function __construct($nome, $vida, $dano) {
             $this->nome = $nome;
-            $this->setVida($vida);
+            $this->vida = $vida;
             $this->dano = $dano;
         }
 
@@ -81,7 +81,13 @@ class Guerreiro extends Personagem {
         $p->atacar();
     }
 
+    $guerreiro->setVida(60);
+
+    echo "Vida antes da cura: " . $guerreiro->getVida() . "\n";
+
     $curandeiro->curar($guerreiro, 50);
+
+    echo "Vida depois da cura: " . $guerreiro->getVida() . "\n";
 
     // https://luiz315.devlook.xyz/resources/views/projetos/poo.php
 
