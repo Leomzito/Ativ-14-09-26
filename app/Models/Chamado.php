@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Models;
     class Chamado{
 
         //READ - Ler todos os chamados 
