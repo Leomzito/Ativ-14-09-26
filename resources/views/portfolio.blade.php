@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/index.css'])
-    <link rel="stylesheet" href="/resources/css/index.css">
     <title>Meu Portfólio - Página Inicial</title>
 </head>
 <body>
