@@ -113,7 +113,7 @@
                         <span>CSS</span>
                         <span>PHP</span>                        
                     </div>
-                    <a href=" {{ route('helpdesk') }}" class="link-projeto">
+                    <a href="{{ route('idade') }}" class="link-projeto">
                         Ver projeto ->
                     </a>
                 </div>
@@ -224,7 +224,7 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    <a href="/resources/views/projetos/helpdesk.php" class="link-projeto">
+                    <a href="{{ route('helpdesk') }}" class="link-projeto">
                         Ver projeto ->
                     </a>
                 </div>
